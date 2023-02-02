@@ -1,9 +1,13 @@
 <!DOCTYPE html> 
 <h2>{{ title }}</h2>
-<form (ngSubmit)="getById()">
+    <form (ngSubmit)="getById()">
     <input type="text" name="ProfileId" placeholder="Enter Profile ID"  [(ngModel)]="id" />
     <button type="submit">Submit</button>
     </form>
+    <form (ngSubmit)="getByName()">
+        <input type="text" name="EmployeeName" placeholder="Enter Employee Name"  [(ngModel)]="name" />
+        <button type="submit">Submit</button>
+        </form>
 <Body>
     <!-- the vertical pipe takes the data from profile and send it through json format  -->
     <pre><div id = "profile" class="col-3">{{ profile | json }}</div></pre>

@@ -14,22 +14,30 @@ export class AppComponent {
   profile : profileModel;
 
   id : string = "";
+  name : string = "";
 
 
   constructor(private service: UserServiceService) {}
 
   ngOnInit(): void {
     this.getById();
+    this.getByName();
     
   }
 
   
 
- 
   getById() {
     this.service.getById(this.id).subscribe((id) => {
       this.profile = id;
       console.log(id);
+    });
+  }
+
+  getByName() {
+    this.service.getByName(this.name).subscribe((name) => {
+      this.profile = name;
+      console.log(name);
     });
   }
 

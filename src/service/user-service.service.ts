@@ -15,5 +15,9 @@ getById(id : string){
     return this.http.get<profileModel>(`${this.baseUrl}/profile/get-profile-by-id?profile_id=${id}`)
 }
 
+getByName(name : string){
+  return this.http.get<profileModel>(`${this.baseUrl}/profile/name?name=${name}`)
+}
+
 
 }
