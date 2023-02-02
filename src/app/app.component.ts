@@ -40,5 +40,4 @@ export class AppComponent {
       console.log(name);
     });
   }
-
 }
