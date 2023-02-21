@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserServiceService } from 'src/service/user-service.service';
+import { UserServiceService } from 'src/app/service/user-service.service';
 import { profileModel } from './models/profileModel';
 import { HttpClient } from '@angular/common/http';
 
