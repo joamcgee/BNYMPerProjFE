@@ -11,6 +11,8 @@ import { profileModel } from 'src/app/models/profileModel';
   
     constructor(private http: HttpClient) { }
 
+
+
 getById(id : string){
     return this.http.get<profileModel>(`${this.baseUrl}/profile/get-profile-by-id?profile_id=${id}`)
 }
@@ -18,6 +20,8 @@ getById(id : string){
 getByName(name : string){
   return this.http.get<profileModel>(`${this.baseUrl}/profile/name?name=${name}`)
 }
+
+
 
 
 }
