@@ -7,11 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
+import { NewProfileComponent } from './new-profile/new-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent
+    FooterComponent,
+    NewProfileComponent
   ],
   imports: [
     BrowserModule,

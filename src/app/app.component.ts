@@ -43,14 +43,5 @@ export class AppComponent {
     });
   }
 
-  onCreateProfile(postData: {id?: string; employee_Id: number; name: string; department: string; date_joined: Date; salary: number; skills: FillMode[]} ) {
-    this.http.post(
-      'http://localhost:8080/api/profile/saveProfile', 
-       postData
-       ).subscribe(responseData => {
-        console.log(responseData);
-       });
-
-    
-  }
+ 
 }
