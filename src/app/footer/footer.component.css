@@ -1,8 +1,14 @@
 footer {
-    display: flex;
-    justify-content: center;
     padding: 5px;
     background-color: #45a1ff;
     color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+   
+    position: absolute;
+    bottom: 0;
+    width: 93%;
+    height: 2.5rem;
     
 }

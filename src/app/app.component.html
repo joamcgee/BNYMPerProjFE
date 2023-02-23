@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="app.component.css" type="text/css">
+
 </head>
 <h1>{{ title }}🔎</h1>
-<body>
+<body className="body">
     <div class="search-container">
         <form (ngSubmit)="getById()">
             <input type="text" name="ProfileId" placeholder="Enter Profile ID"  [(ngModel)]="id" />
@@ -15,15 +17,15 @@
             <button type="submit"><strong>Submit</strong></button>
         </form>
     </div>
-    <a routerLink="/new-profile.html">Add New Employee</a>
+
+    <router-outlet></router-outlet>
     <hr size="4" noshade>
-    <!-- the vertical pipe takes the data from profile and send it through json format  -->
     
-    <pre>
+    <!-- the vertical pipe takes the data from profile and send it through json format  -->
+        <pre>
         <div id = "profile" class="profile-contianer">{{ profile | json }}</div>
     </pre>
+
     <footer>
         <app-footer></app-footer>
     </footer>  
-
-
