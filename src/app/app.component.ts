@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserServiceService } from 'src/app/service/user-service.service';
 import { profileModel } from './models/profileModel';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class AppComponent {
   
 
 
-  constructor(private http: HttpClient, private service: UserServiceService) {}
+  constructor(private http: HttpClient, private service: UserServiceService, public router : Router) {}
 
   ngOnInit(): void {
     this.getById();
@@ -41,6 +42,14 @@ export class AppComponent {
       this.profile = name;
       console.log(name);
     });
+  }
+
+  // method for creating a new tab on "click"
+  //preventDefault() prevents the web page from refreshing and reseting state. And keeping the session current
+  // add to main.ts to make globally usable
+  navigate(event : Event, url : string) {
+    event.preventDefault();
+    window.open(url, "_blank");
   }
 
  

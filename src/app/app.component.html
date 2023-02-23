@@ -18,14 +18,14 @@
         </form>
     </div>
 
+    <a *ngIf="router.url !== '/new-profile' " (click)="navigate($event, 'http://localhost:4200/new-profile')">Add new Employee</a>
     <router-outlet></router-outlet>
+
     <hr size="4" noshade>
     
     <!-- the vertical pipe takes the data from profile and send it through json format  -->
-        <pre>
+    <pre>
         <div id = "profile" class="profile-contianer">{{ profile | json }}</div>
     </pre>
 
-    <footer>
-        <app-footer></app-footer>
-    </footer>  
+    <app-footer></app-footer>
