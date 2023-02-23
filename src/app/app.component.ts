@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserServiceService } from 'src/app/service/user-service.service';
 import { profileModel } from './models/profileModel';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class AppComponent {
   
 
 
-  constructor(private http: HttpClient, private service: UserServiceService) {}
+  constructor(private http: HttpClient, private service: UserServiceService, public router : Router) {}
 
   ngOnInit(): void {
     this.getById();
@@ -43,14 +44,13 @@ export class AppComponent {
     });
   }
 
-  onCreateProfile(postData: {id?: string; employee_Id: number; name: string; department: string; date_joined: Date; salary: number; skills: FillMode[]} ) {
-    this.http.post(
-      'http://localhost:8080/api/profile/saveProfile', 
-       postData
-       ).subscribe(responseData => {
-        console.log(responseData);
-       });
-
-    
+  // method for creating a new tab on "click"
+  //preventDefault() prevents the web page from refreshing and reseting state. And keeping the session current
+  // add to main.ts to make globally usable
+  navigate(event : Event, url : string) {
+    event.preventDefault();
+    window.open(url, "_blank");
   }
+
+ 
 }

@@ -6,6 +6,7 @@ import { profileModel } from 'src/app/models/profileModel';
     providedIn: 'root'
   })
   export class UserServiceService {
+    profile : profileModel;
   
     baseUrl = "http://localhost:8080/api"
   
@@ -13,15 +14,20 @@ import { profileModel } from 'src/app/models/profileModel';
 
 
 
-getById(id : string){
-    return this.http.get<profileModel>(`${this.baseUrl}/profile/get-profile-by-id?profile_id=${id}`)
-}
+    getById(id : string){
+        return this.http.get<profileModel>(`${this.baseUrl}/profile/get-profile-by-id?profile_id=${id}`)
+    }
 
-getByName(name : string){
-  return this.http.get<profileModel>(`${this.baseUrl}/profile/name?name=${name}`)
-}
+    getByName(name : string){
+      return this.http.get<profileModel>(`${this.baseUrl}/profile/name?name=${name}`)
+    }
+
+      
+}    
 
 
 
 
-}
+
+
+
