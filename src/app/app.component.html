@@ -17,12 +17,24 @@
             <button type="submit"><strong>Submit</strong></button>
         </form>
     </div>
-
-    <a *ngIf="router.url !== '/new-profile' " (click)="navigate($event, 'http://localhost:4200/new-profile')">Add new Employee</a>
-    <router-outlet></router-outlet>
-
+    <a *ngIf="router.url !== '/new-profile' " (click)="navigate($event, 'http://localhost:4200/new-profile')">Add new Employee (Click here to go to add new profile link)</a>
     <hr size="4" noshade>
-    
+    <table border= "5" width="500" >
+        <tr>
+            <th>EmployeeID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Skills</th>
+        </tr>
+        <tr>
+            <td {{employee_Id}}>Employee Id data</td>
+            <td {{name}}>Name data</td>
+            <td {{department}}>Dep. data</td>
+            <td {{date_Joined}}>Salary data</td>
+            <td {{salary}}>Skills data</td>
+        </tr>
+    </table>
     <!-- the vertical pipe takes the data from profile and send it through json format  -->
     <pre>
         <div id = "profile" class="profile-contianer">{{ profile | json }}</div>
