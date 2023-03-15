@@ -1,10 +1,10 @@
 import {skillModel} from './skillmodel';
 export interface profileModel{
     id: string;
-    employee_Id: number;
+    employeeId: string;
     name: string;
     department: string;
-    date_Joined: Date;
+    dateJoined: Date;
     salary: number;
     skills: skillModel[];
     

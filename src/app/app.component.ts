@@ -23,8 +23,6 @@ export class AppComponent {
   constructor(private http: HttpClient, private service: UserServiceService, public router : Router) {}
 
   ngOnInit(): void {
-    this.getById();
-    this.getByName();
     
   }
 
@@ -33,14 +31,14 @@ export class AppComponent {
   getById() {
     this.service.getById(this.id).subscribe((id) => {
       this.profile = id;
-      console.log(id);
+      console.log(this.profile);
     });
   }
 
   getByName() {
     this.service.getByName(this.name).subscribe((name) => {
       this.profile = name;
-      console.log(name);
+      console.log(this.profile);
     });
   }
 

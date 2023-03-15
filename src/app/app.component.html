@@ -9,31 +9,37 @@
 <body className="body">
     <div class="search-container">
         <form (ngSubmit)="getById()">
-            <input type="text" name="ProfileId" placeholder="Enter Profile ID"  [(ngModel)]="id" />
+            <input type="text" name="ProfileId" placeholder="Enter Profile ID" [(ngModel)]="id" />
             <button type="submit"><strong>Submit</strong></button>
         </form>
         <form (ngSubmit)="getByName()">
-            <input type="text" name="EmployeeName" placeholder="Enter Employee Name"  [(ngModel)]="name" />
+            <input  type="text" name="EmployeeName" placeholder="Enter Employee Name" [(ngModel)]="name" />
             <button type="submit"><strong>Submit</strong></button>
         </form>
     </div>
     <a *ngIf="router.url !== '/new-profile' " (click)="navigate($event, 'http://localhost:4200/new-profile')">Add new Employee (Click here to go to add new profile link)</a>
     <hr size="4" noshade>
     <table border= "5" width="500" >
-        <tr>
-            <th>EmployeeID</th>
-            <th>Name</th>
-            <th>Department</th>
-            <th>Salary</th>
-            <th>Skills</th>
-        </tr>
-        <tr>
-            <td {{employee_Id}}>Employee Id data</td>
-            <td {{name}}>Name data</td>
-            <td {{department}}>Dep. data</td>
-            <td {{date_Joined}}>Salary data</td>
-            <td {{salary}}>Skills data</td>
-        </tr>
+        <thead> 
+            <tr>
+                <th>EmployeeID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Date Joined</th>
+                <th>Salary</th>
+                <th>Skills</th>
+            </tr>
+        </thead> 
+        <tbody>
+            <tr>
+                <td>{{profile[0].employeeId}}</td>
+                <td>{{profile[0].name}}</td>
+                <td>{{profile[0].department}}</td>
+                <td>{{profile[0].dateJoined}}</td>
+                <td>{{profile[0].salary}}</td>
+                <td>{{profile[0].skills}}</td>
+            </tr>
+        </tbody>
     </table>
     <!-- the vertical pipe takes the data from profile and send it through json format  -->
     <pre>
