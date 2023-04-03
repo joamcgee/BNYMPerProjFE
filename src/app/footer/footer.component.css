@@ -6,7 +6,7 @@ footer {
     border-radius: 20px;
     padding: 10px;
    
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 93%;
     height: 2.5rem;
