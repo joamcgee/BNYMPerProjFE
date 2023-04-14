@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { NewProfileComponent } from './new-profile/new-profile.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
   {path: 'new-profile', component: NewProfileComponent}
@@ -18,7 +19,9 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     FooterComponent,
-    NewProfileComponent
+    NewProfileComponent,
+    NavbarComponent,
+    
   ],
   imports: [
     BrowserModule,
